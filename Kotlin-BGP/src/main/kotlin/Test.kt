@@ -1,23 +1,27 @@
 // Storing information into array
-data class EdgeToCalc(var Start:String, var Stop:String, var Weight:Int, var E:Int){
+data class EdgeToCalc(var Start:String, var Stop:String, var Weight:Int, var E:Int)
+{
     var startArray  = Array(E){ Start}
     var stopArray   = Array(E){ Stop}
     var weightArray  = Array(E){ Weight}
 }
 
 // Constructing edges from array
-data class Graph(var Vertex:Int, var Edge: Int)                       {
+data class Graph(var Vertex:Int, var Edge: Int)
+{
     var edg = EdgeToCalc("","",0,Edge)
 }
 // Creating graph from edges
-fun create( V:Int , E:Int):Graph                                      {
+fun create( V:Int , E:Int):Graph                                      
+{
     val g = Graph(V,E)
     g.edg =  EdgeToCalc("No","Yes",9999,E)
 
     return g
 }
 // Bellman-Ford algorithm
-fun bellmanFord(graph:Graph, Stv:String)                                 {
+fun bellmanFord(graph:Graph, Stv:String)                                 
+{
     val vertex = graph.copy().Vertex
     val edge = graph.copy().Edge
 
@@ -39,7 +43,8 @@ fun bellmanFord(graph:Graph, Stv:String)                                 {
     print(arr)
 }
 // Displaying graph information
-fun input(ver: Int, edges: Map<Pair<String, String>,Int>)                                                           {
+fun input(ver: Int, edges: Map<Pair<String, String>,Int>)                                                           
+{
 
     var startingVertex : String
     var destinationVertex : String
